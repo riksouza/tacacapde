@@ -3,7 +3,6 @@
     <head>
         <meta charset="UTF-8">
         <title>Cadastrando</title>
-        
     </head>
 
     <body>
@@ -13,11 +12,15 @@ $host = 'localhost';
 $user = 'root';
 $pass = 'root';
 $banco = 'mydb';
-$conexao = mysql_connect($host, $user, $pass, $banco) or die(mysql_error());
-mysql_select_db($banco) or die(mysql_error());
-?>
+$conexao = mysqli_connect($host, $user, $pass, $banco);
 
-<?php
+// Check connection
+if (!$conexao) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+
+
 $cidade=$_POST['cidade'];
 $latitude=$_POST['latitude'];
 $logradouro=$_POST['logradouro'];
@@ -26,11 +29,18 @@ $nome=$_POST['nome'];
 $proprietario=$_POST['proprietario'];
 $telefone=$_POST['telefone'];
 $bairro=$_POST['bairro'];
-$sql = mysql_query("INSERT INTO estabelecimento(cidade, latitude, logradouro, longitude, nome, proprietario, telefone, bairro)
-VALUES('$cidade', '$latitude', '$logradouro', '$longitude', '$nome', '$proprietario', '$telefone', '$bairro')");
+$sql = "INSERT INTO estabelecimento(cidade, latitude, logradouro, longitude, nome, proprietario, telefone, bairro)
+VALUES('$cidade', '$latitude', '$logradouro', '$longitude', '$nome', '$proprietario', '$telefone', '$bairro')";
+
+if (mysqli_query($conexao, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conexao);
+}
+
+
+mysqli_close($conexao);
 ?>
 
-        
-        
     </body>
 </html>

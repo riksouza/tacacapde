@@ -12,7 +12,7 @@
     Logradouro:<input type="text" name="logradouro"/><br><br>
     Longitude:<input type="text" name="longitude"/><br><br> 
     Nome:<input type="text" name="nome"/><br><br> 
-    Propriet√°rio:<input type="text" name="proprietario"/><br><br> 
+    Propriet·rio:<input type="text" name="proprietario"/><br><br> 
     Telefone:<input type="text" name="telefone"/><br><br> 
     Bairro:<input type="text" name="bairro"/><br><br> 
     <input type="submit" value="cadastrar"/>
