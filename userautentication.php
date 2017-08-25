@@ -1,17 +1,12 @@
 
 <?php
 $host = 'localhost';
-$user = 'root';
-$pass = 'root';
-$banco = 'mydb';
+$user = 'id2702837_root';
+$pass = 'r1kSouza';
+$banco = 'id2702837_mydb';
 $conexao = mysqli_connect($host, $user, $pass, $banco);
 
 
-//$host = 'localhost';
-//$user = 'root';
-//$pass = 'root';
-//$banco = 'mydb';
-//$conexao = mysqli_connect($host, $user, $pass, $banco);
 
 // Check connection
 if (!$conexao) {
@@ -22,7 +17,7 @@ if (!$conexao) {
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Autenticando usuário</title>
+        <title>Autenticando usuï¿½rio</title>
         <script type="text/javascript">
             function loginsuccessfully() {
                 setTimeout("windows.location='painel.php'", 3000);
