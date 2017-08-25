@@ -15,6 +15,8 @@
     Proprietário:<input type="text" name="proprietario"/><br><br> 
     Telefone:<input type="text" name="telefone"/><br><br> 
     Bairro:<input type="text" name="bairro"/><br><br> 
+     Email:<input type="text" name="email"/><br><br> 
+    Senha:<input type="password" name="senha"/><br><br> 
     <input type="submit" value="cadastrar"/>
    </form>
         <?php

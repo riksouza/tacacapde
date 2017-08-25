@@ -29,8 +29,10 @@ $nome=$_POST['nome'];
 $proprietario=$_POST['proprietario'];
 $telefone=$_POST['telefone'];
 $bairro=$_POST['bairro'];
-$sql = "INSERT INTO estabelecimento(cidade, latitude, logradouro, longitude, nome, proprietario, telefone, bairro)
-VALUES('$cidade', '$latitude', '$logradouro', '$longitude', '$nome', '$proprietario', '$telefone', '$bairro')";
+$email=$_POST['email'];
+$senha=$_POST['senha'];
+$sql = "INSERT INTO estabelecimento(cidade, latitude, logradouro, longitude, nome, proprietario, telefone, bairro, email, senha)
+VALUES('$cidade', '$latitude', '$logradouro', '$longitude', '$nome', '$proprietario', '$telefone', '$bairro', '$email', '$senha')";
 
 if (mysqli_query($conexao, $sql)) {
     echo "New record created successfully";
