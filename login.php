@@ -10,6 +10,8 @@
 E-mail: <input type="text" name="email" /> <br><br>
 senha: <input type="text" name="senha" /> <br><br>
 <input type="submit" value="entrar"/>
+<a href="index.php" >cancelar</a>
+
 
 </form>
 </body>

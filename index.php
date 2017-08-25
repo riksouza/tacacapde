@@ -6,6 +6,7 @@
         <title>index</title>
     </head>
 <a href="cadastro.php" >cadastro</a>
+<a href="login.php" >login</a>
 
 <div id="googleMap" style="width:100%;height:400px;"></div>
 

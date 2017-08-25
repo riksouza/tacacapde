@@ -6,6 +6,13 @@ $pass = 'root';
 $banco = 'mydb';
 $conexao = mysqli_connect($host, $user, $pass, $banco);
 
+
+//$host = 'localhost';
+//$user = 'root';
+//$pass = 'root';
+//$banco = 'mydb';
+//$conexao = mysqli_connect($host, $user, $pass, $banco);
+
 // Check connection
 if (!$conexao) {
     die("Connection failed: " . mysqli_connect_error());
