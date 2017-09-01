@@ -12,7 +12,7 @@
 <?php
 $host = 'localhost';
 $user = 'id2702837_root';
-$pass = 'root';
+$pass = 'r1kSouza';
 $banco = 'id2702837_mydb';
 $conexao = mysqli_connect($host, $user, $pass, $banco);
 
