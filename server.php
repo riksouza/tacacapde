@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-	$db = mysqli_connect('localhost', 'root', 'root', 'mydb');
+	$db = mysqli_connect('localhost', 'id2702837_root', 'root', 'id2702837_mydb');
 
 	// initialize variables
 	$nome = "";

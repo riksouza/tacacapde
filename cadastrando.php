@@ -9,9 +9,9 @@
 
 <?php
 $host = 'localhost';
-$user = 'root';
+$user = 'id2702837_root';
 $pass = 'root';
-$banco = 'mydb';
+$banco = 'id2702837_mydb';
 $conexao = mysqli_connect($host, $user, $pass, $banco);
 
 // Check connection

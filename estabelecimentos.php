@@ -11,9 +11,9 @@
 
 <?php
 $host = 'localhost';
-$user = 'root';
+$user = 'id2702837_root';
 $pass = 'root';
-$banco = 'mydb';
+$banco = 'id2702837_mydb';
 $conexao = mysqli_connect($host, $user, $pass, $banco);
 
 // Check connection
@@ -26,7 +26,7 @@ if (!$conexao) {
         
         
  <?php			
-//	connec+on….
+//	connec+onï¿½.
 $sql	= "SELECT * FROM estabelecimento";
 $result	= mysqli_query($conexao, $sql );
 if(mysqli_num_rows($result)>0){	
