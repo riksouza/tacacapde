@@ -7,6 +7,7 @@
     </head>
 
     <body>
+        <a href="index.php" >home</a><br><br>
 
 <?php
 $host = 'localhost';
@@ -32,7 +33,7 @@ if(mysqli_num_rows($result)>0){
     
 //	output	data	of	each	row	
 while($row=mysqli_fetch_assoc($result))	{
-   echo	"id:".$row["ID_ESTAB"]."Nome:".$row["NOME"].
+   echo	"id:".$row["ID_ESTAB"]."cidade:".$row["CIDADE"]."Nome:".$row["NOME"].
 "<br>";}			
 }else{			
     echo"0 results";			

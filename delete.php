@@ -5,9 +5,9 @@ $password = "root";
 $dbname = "myDB";
 
 // Create connection
-$conexao = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
-if (!$conexao) {
+if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
@@ -16,10 +16,10 @@ if (!$conexao) {
 //	connec+on
 //	sql	to	delete	a	record			
 $sql	=	"DELETE	FROM	estabelecimento	WHERE	id=1";
-if	($conexao->query($sql)	===	TRUE)	{
+if	($conn->query($sql)	===	TRUE)	{
 echo	"Record	deleted	successfully";			
 
 }	else	{
  echo	"Error	dele>ng	record:	"	.	$conn->error;			}
- mysqli_close($conexao);		
+ mysqli_close($conn);		
  ?>		

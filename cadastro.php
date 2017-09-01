@@ -1,28 +1,81 @@
+<?php 
+include('server.php');
+	if (isset($_GET['edit'])) {
+		$id = $_GET['edit'];
+		$update = true;
+		$record = mysqli_query($db, "SELECT * FROM estabelecimento WHERE ID_ESTAB=$id");
+
+		if (count($record) == 1 ) {
+			$n = mysqli_fetch_array($record);
+			$nome = $n['NOME'];
+			$proprietario = $n['PROPRIETARIO'];
+		}
+
+	}
+?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Sistema de Cadastro</title>
-    </head>
+<head>
+	<title>CRUD: CReate, Update, Delete PHP MySQL </title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<?php if (isset($_SESSION['message'])): ?>
+		<div class="msg">
+			<?php 
+				echo $_SESSION['message']; 
+				unset($_SESSION['message']);
+			?>
+		</div>
+	<?php endif ?>
 
-    <body>
-    <form name="signup" method="post" action="cadastrando.php"> 
-    Cidade:<input type="text" name="cidade"/><br><br>
-    Latitude:<input type="text" name="latitude"/><br><br>
-    Logradouro:<input type="text" name="logradouro"/><br><br>
-    Longitude:<input type="text" name="longitude"/><br><br> 
-    Nome:<input type="text" name="nome"/><br><br> 
-    Proprietário:<input type="text" name="proprietario"/><br><br> 
-    Telefone:<input type="text" name="telefone"/><br><br> 
-    Bairro:<input type="text" name="bairro"/><br><br> 
-     Email:<input type="text" name="email"/><br><br> 
-    Senha:<input type="password" name="senha"/><br><br> 
-    <input type="submit" value="cadastrar"/>
-   </form>
-        <?php
-        // put your code here
-        ?>
-        
-        <a href="index.php" >home</a>
-    </body>
+<?php $results = mysqli_query($db, "SELECT * FROM estabelecimento"); ?>
+
+<table>
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Proprietario</th>
+			<th colspan="2">Acao</th>
+		</tr>
+	</thead>
+	
+	<?php while ($row = mysqli_fetch_array($results)) { ?>
+		<tr>
+			<td><?php echo $row['NOME']; ?></td>
+			<td><?php echo $row['PROPRIETARIO']; ?></td>
+			<td>
+				<a href="cadastro.php?edit=<?php echo $row['ID_ESTAB']; ?>" class="edit_btn" >Edit</a>
+			</td>
+			<td>
+				<a href="server.php?del=<?php echo $row['ID_ESTAB']; ?>" class="del_btn">Delete</a>
+			</td>
+		</tr>
+	<?php } ?>
+</table>
+	
+
+
+<form method="post" action="server.php" >
+
+	<input type="hidden" name="id" value="<?php echo $id; ?>">
+
+	<div class="input-group">
+		<label>Name</label>
+		<input type="text" name="nome" value="<?php echo $nome; ?>">
+	</div>
+	<div class="input-group">
+		<label>Address</label>
+		<input type="text" name="proprietario" value="<?php echo $proprietario; ?>">
+	</div>
+	<div class="input-group">
+
+		<?php if ($update == true): ?>
+			<button class="btn" type="submit" name="update" style="background: #556B2F;" >update</button>
+		<?php else: ?>
+			<button class="btn" type="submit" name="save" >Salvar</button>
+		<?php endif ?>
+	</div>
+</form>
+</body>
 </html>
