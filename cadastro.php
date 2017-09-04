@@ -61,11 +61,11 @@ include('server.php');
 	<input type="hidden" name="id" value="<?php echo $id; ?>">
 
 	<div class="input-group">
-		<label>Name</label>
+		<label>Nome</label>
 		<input type="text" name="nome" value="<?php echo $nome; ?>">
 	</div>
 	<div class="input-group">
-		<label>Address</label>
+		<label>Proprietario</label>
 		<input type="text" name="proprietario" value="<?php echo $proprietario; ?>">
 	</div>
 	<div class="input-group">
