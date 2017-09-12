@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-	$db = mysqli_connect('localhost', 'id2702837_root', 'r1kSouza', 'id2702837_mydb');
+	$db = mysqli_connect('localhost', 'root', 'root', 'mydb');
 
 	// initialize variables
 	$nome = "";
@@ -12,8 +12,8 @@
 		$nome = $_POST['nome'];
 		$proprietario = $_POST['proprietario'];
 
-		mysqli_query($db, "INSERT INTO estabelecimento (nome, proprietario) VALUES ('$nome', '$proprietario')"); 
-		$_SESSION['message'] = "Address saved"; 
+		mysqli_query($db, "INSERT INTO estabelecimento(nome, proprietario) VALUES('$nome', '$proprietario')"); 
+		$_SESSION['message'] = "Proprietario saved"; 
 		header('location: index.php');
 	}
 
@@ -25,14 +25,14 @@
 
 		mysqli_query($db, "UPDATE estabelecimento SET NOME='$nome', proprietario='$proprietario' WHERE ID_ESTAB=$id");
 		$_SESSION['message'] = "proprietario updated!"; 
-		header('location: index.php');
+		header('location: cadastro.php');
 	}
 
 if (isset($_GET['del'])) {
 	$id = $_GET['del'];
 	mysqli_query($db, "DELETE FROM estabelecimento WHERE ID_ESTAB=$id");
 	$_SESSION['message'] = "proprietario deleted!"; 
-	header('location: index.php');
+	header('location: cadastro.php');
 }
 
 

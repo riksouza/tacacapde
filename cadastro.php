@@ -17,9 +17,11 @@ include('server.php');
 <html>
 <head>
 	<title>CRUD: CReate, Update, Delete PHP MySQL </title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+    <a href="index.php" >Home</a>
+    
 	<?php if (isset($_SESSION['message'])): ?>
 		<div class="msg">
 			<?php 
@@ -73,7 +75,7 @@ include('server.php');
 		<?php if ($update == true): ?>
 			<button class="btn" type="submit" name="update" style="background: #556B2F;" >update</button>
 		<?php else: ?>
-			<button class="btn" type="submit" name="save" >Salvar</button>
+			<button class="btn" type="submit" name="save" >save</button>
 		<?php endif ?>
 	</div>
 </form>
