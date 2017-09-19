@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-	$db = mysqli_connect('localhost', 'root', 'root', 'mydb');
+	$db = mysqli_connect('localhost', 'id2702837_root', 'r1kSouza', 'id2702837_tacacadb');
 
 	// initialize variables
 	$nome = "";
@@ -51,7 +51,7 @@ $errors = array();
 $_SESSION['success'] = "";
 
 // connect to database
-$db = mysqli_connect('localhost', 'root', 'root', 'mydb');
+$db = mysqli_connect('localhost', 'id2702837_root', 'r1kSouza', 'id2702837_tacacadb');
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
